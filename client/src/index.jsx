@@ -9,6 +9,12 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getCat('Xito');
+    this.getCat('Luna');
+    this.getCat('Ash');
+    this.getCat('Batman');
+    this.getCat('Mr. Snuffles');
+    this.getCat('Garfield');
+    this.getCat('Oscar');
   }
 
   getCat(catName) {
