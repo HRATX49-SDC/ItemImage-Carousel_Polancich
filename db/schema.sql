@@ -9,6 +9,10 @@ create table cats (
   catName varChar(255) not null,
   price decimal(10,2) not null default 99.99,
   rating decimal(10,2) null default 0.00,
+  INDEX categ_ind (category_id),
+    FOREIGN KEY (category_id)
+      REFERENCES categories(id)
+      ON DELETE CASCADE,
   unique key (catName)
 );
 
@@ -17,19 +21,6 @@ create table categories (
   categoryName varChar(255) not null unique key
 );
 
-create table cats_categories (
-  id int not null auto_increment primary key,
-  cat_id int not null,
-  category_id int not null,
-  INDEX cat_ind (cat_id),
-    FOREIGN KEY (cat_id)
-      REFERENCES cats(id)
-      ON DELETE CASCADE,
-  INDEX categ_ind (category_id),
-    FOREIGN KEY (category_id)
-      REFERENCES categories(id)
-      ON DELETE CASCADE
-);
 
 create table images (
   id int not null auto_increment primary key,
