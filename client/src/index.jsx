@@ -2,19 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Axios from 'axios';
 
+import Title from './components/Title.jsx'
+
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      cat: {}
+    }
   }
 
   componentDidMount() {
     this.getCat('Xito');
-    this.getCat('Luna');
-    this.getCat('Ash');
-    this.getCat('Batman');
-    this.getCat('Mr. Snuffles');
-    this.getCat('Garfield');
-    this.getCat('Oscar');
   }
 
   getCat(catName) {
@@ -25,7 +24,9 @@ class App extends React.Component {
         }
       })
       .then(results => {
-        console.log(results.data)
+        this.setState ({
+          cat: results.data
+        });
       })
       .catch(err => {
         console.log(err);
@@ -35,7 +36,7 @@ class App extends React.Component {
   render() {
     return(
     <div>
-      <h1>Hello from React</h1>
+      <Title category={this.state.cat.categoryName} name={this.state.cat.catName}/>
     </div>
     );
   }
