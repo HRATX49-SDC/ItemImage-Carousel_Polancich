@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Axios from 'axios';
 
-import Title from './components/Title.jsx'
+import Title from './components/Title.jsx';
+import ContentBox from './components/ContentBox.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,6 +11,8 @@ class App extends React.Component {
     this.state = {
       cat: {}
     }
+
+    this.getCat = this.getCat.bind(this);
   }
 
   componentDidMount() {
@@ -37,6 +40,7 @@ class App extends React.Component {
     return(
     <div>
       <Title category={this.state.cat.categoryName} name={this.state.cat.catName}/>
+      <ContentBox />
     </div>
     );
   }
