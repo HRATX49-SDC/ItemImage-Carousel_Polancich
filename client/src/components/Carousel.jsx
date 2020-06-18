@@ -1,19 +1,25 @@
 import React from 'react';
 
-export default function Carousel(props) {
+export default function Carousel({images, mainImage}) {
   return (
     <div id='carousel'>
       <div id='carousel-wrapper'>
-        <div id='mutiple-image-wrapper'>
+        {/* <div id='mutiple-image-wrapper'> */}
           <div className='carousel-items' id='image-legend'>
             <div id='legend-grid'>
-              {/* map images here */}
+              {images.map((image, index) => {
+                return (
+                  <button key={index} className="image-button">
+                    <img id={index} src={image} className='thumbnail'/>
+                  </button>
+                );
+              })}
             </div>
           </div>
           <div className='carousel-items' id='main-image'>
-            {/* display main image here */}
+            <img id='#main-img' src={images[mainImage]} />
           </div>
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );
