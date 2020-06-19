@@ -12,7 +12,7 @@ export default function PriceColumn(props) {
         <div className="quantity-box">
           <div id="quantity-select">
             <div id="quantity-title">Quantity</div>
-            <select id="quantity-button" expanded="false">
+            <select id="quantity-button" className="dotted-outline" expanded="false">
               <option>1</option>
               <option>2</option>
               <option>3</option>

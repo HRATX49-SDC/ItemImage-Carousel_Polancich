@@ -24,6 +24,14 @@ div {
   margin-bottom: 12px;
 }
 
+.std-margin-bottom {
+  margin-bottom: 12px;
+}
+
+.tiny-margin-top {
+  margin-top: 4px;
+}
+
 .std-padding {
   padding-left: 16px;
   padding-right: 16px;
@@ -33,9 +41,26 @@ div {
   font-size: 12px;
 }
 
+.md-text {
+  font-size: 14px;
+}
+
 .sm-padding {
   padding-top: 4px;
   padding-bottom: 4px;
+}
+
+.tiny-padding-right {
+  padding-right: 4px !important;
+}
+
+.tiny-padding-left {
+  padding-left: 4px !important;
+}
+
+.dotted-outline:focus {
+  outline-offset: 2px;
+  outline: rgb(51, 51, 51) dashed 1px;
 }
 
 .mini-link {
@@ -45,6 +70,11 @@ div {
   background-color: transparent;
   cursor: pointer;
   touch-action: manipulation;
+}
+
+.mini-link:focus {
+  outline-offset: 2px;
+  outline: rgb(51, 51, 51) dashed 1px;
 }
 
 .mini-link:hover {
@@ -97,6 +127,16 @@ div {
   margin-left: initial;
   flex-basis: 25%;
   max-width: 25%;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.column-1-2 {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-left: initial;
+  flex-basis: 50%;
+  width: 50%;
   flex-direction: row;
   flex: 0 0 auto;
 }
@@ -295,11 +335,6 @@ img {
   border-color: rgb(51, 51, 51);
 }
 
-#quantity-button:focus {
-  outline-offset: 2px;
-  outline: rgb(51, 51, 51) dashed 1px;
-}
-
 /* #quantity-button::before {
   display: block;
   content: "";
@@ -354,6 +389,61 @@ img {
 
 #dropdown-arrow {
   display: flex;
+}
+
+/*////////////////////////
+  Purchase Column Styling
+////////////////////////*/
+
+#purchase-column {
+  padding-left: 16px;
+  padding-right:16px;
+}
+
+.fulfillment-boxes {
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background: rgb(247, 247, 247);
+}
+
+#delivery-box {
+  overflow: hidden;
+}
+
+.dark-green-bold {
+  font-weight: bold;
+  color: rgb(0, 102, 1);
+}
+
+.dark-green-margin {
+  color: rgb(0, 102, 1);
+  margin-bottom: 4px;
+}
+
+.dark-bold {
+  font-weight: bold;
+  color: rgb(51, 51, 51);
+}
+
+.dark-margin {
+  color: rgb(102, 102, 102);
+  padding-top: 4px;
+}
+
+.red-button {
+  vertical-align: middle;
+  text-align: center;
+  text-overflow: ellipsis;
+  height: 32px;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(204, 0, 0);
+  width: 100%;
+  font-size: 15px;
+  border: 1px solid rgb(204, 0, 0);
+  padding: 0px 8px;
+  margin: 0px;
+  border-radius: 4px;
 }
 
 /*////////////////////////
