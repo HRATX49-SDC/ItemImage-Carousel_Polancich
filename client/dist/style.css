@@ -1,18 +1,35 @@
+/*////////////////////////
+  General Styling
+////////////////////////*/
+
 * {
   font-family: Targetica, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-size-adjust: 100%;
   line-height: 1.4285;
   box-sizing: border-box;
   margin: 0;
+  color: rgb(51,51,51);
 }
 
 div {
   display: block;
 }
 
+/*////////////////////////
+  Title Styling
+////////////////////////*/
+
 .std-margin-tight {
   margin-top: 12px;
   margin-bottom: 12px;
+}
+
+.std-margin-bottom {
+  margin-bottom: 12px;
+}
+
+.tiny-margin-top {
+  margin-top: 4px;
 }
 
 .std-padding {
@@ -22,12 +39,28 @@ div {
 
 .sm-text {
   font-size: 12px;
-  color: rgb(51,51,51);
+}
+
+.md-text {
+  font-size: 14px;
 }
 
 .sm-padding {
   padding-top: 4px;
   padding-bottom: 4px;
+}
+
+.tiny-padding-right {
+  padding-right: 4px !important;
+}
+
+.tiny-padding-left {
+  padding-left: 4px !important;
+}
+
+.dotted-outline:focus {
+  outline-offset: 2px;
+  outline: rgb(51, 51, 51) dashed 1px;
 }
 
 .mini-link {
@@ -37,6 +70,11 @@ div {
   background-color: transparent;
   cursor: pointer;
   touch-action: manipulation;
+}
+
+.mini-link:focus {
+  outline-offset: 2px;
+  outline: rgb(51, 51, 51) dashed 1px;
 }
 
 .mini-link:hover {
@@ -69,4 +107,434 @@ div {
 
 #related-link {
   color: rgb(51, 51, 51);
+}
+
+/*////////////////////////
+  ContentBox Styling
+////////////////////////*/
+
+
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+}
+
+.column-1-4 {
+  padding-top: 12px;
+  margin-left: initial;
+  flex-basis: 25%;
+  max-width: 25%;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.column-1-2 {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-left: initial;
+  flex-basis: 50%;
+  width: 50%;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+/*////////////////////////
+  Carousel Styling
+////////////////////////*/
+/* small screen flex checked first, larget screens scale up*/
+#carousel {
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  border-right-color: inherit;
+  flex-direction: row;
+  flex: 0 0 auto;
+  max-height: 575px;
+}
+
+#carousel-wrapper {
+  height: 100%;
+  position: relative;
+  display: flex;
+  text-align: center;
+}
+
+#multiple-image-wrapper {
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  flex: 0 1 auto;
+  text-align: center;
+}
+
+.carousel-items {
+  padding-right: 0px;
+  padding-left: 0px;
+  border-right-color: inherit;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+#legend-grid {
+  max-width: 117.6px;
+  width: 100%;
+  max-height: 571px;
+  margin-top: 2px;
+  overflow: hidden;
+  flex-direction: column;
+  display: flex;
+}
+
+button {
+  vertical-align: middle;
+  box-shadow: none;
+  padding: 0px;
+  overflow: visible;
+}
+
+.image-button {
+  margin: 2px;
+  margin-left: 1px;
+  margin-top: 3px;
+  min-height: 74px;
+  max-height: 111.5px;
+  border: 1px solid transparent;
+  border-image: initial;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  border-width: 0px;
+}
+
+.thumbnail {
+  min-height: 76px;
+  max-height: 109px;
+  width: 100%;
+  height: 7.7vw;
+  margin: auto;
+}
+
+#main-image {
+  justify-content: center;
+  position: relative;
+  display: flex;
+  flex-basis: 100%;
+  height: 100%;
+  align-items: flex-start;
+  overflow: hidden;
+  margin: 0;
+  margin-bottom:32px;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+#main-img {
+  min-height: 76px;
+  max-height: 109px;
+  width: 100%;
+  height: 7.7vw;
+  margin: auto;
+}
+
+/*////////////////////////
+  Price Column Styling
+////////////////////////*/
+
+#price-box {
+  padding-bottom: 16px;
+}
+
+#price-styling {
+  display: inline-block;
+  font-weight: bold;
+}
+
+#price-reviews {
+  margin-top: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  align-items: center;
+}
+
+.price-link {
+  display: flex;
+  margin-right: 4px;
+  vertical-align: baseline;
+  cursor: pointer;
+  color: rgb(102, 102, 102);
+  text-decoration: underline;
+  font-size: 12px;
+}
+
+.price-link:hover {
+  color: rgb(51, 51, 51);
+  text-decoration: none;
+}
+
+#questions-link {
+  border-left: 1px solid rgb(214, 214, 214);
+  padding-left: 4px;
+}
+
+.quantity-box {
+  padding-bottom: 12px;
+}
+
+#quantity-select {
+  width: 100px;
+  position: relative;
+}
+
+#quantity-title {
+  font-weight: bold;
+  transform: translate3d(0px, -12px, 0px);
+  font-size: 16px;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  backface-visibility: hidden;
+  margin-left: 12px;
+  z-index: 1;
+  pointer-events: none;
+  padding: 0px 3px;
+}
+
+#quantity-button {
+  position: relative;
+  font-weight: normal;
+  text-align: center;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  user-select: none;
+  display: block;
+  flex-basis: 100%;
+  width: 100%;
+  font-size:  16px;
+  line-height: 1.42857;
+  color: rgb(51, 51, 51);
+  background-color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  border-radius: 4px;
+  border-color: rgb(136, 136, 136);
+  box-shadow: none;
+  overflow: visible;
+}
+
+#quantity-button:active {
+  color: rgb(255, 255, 255);
+  background-color: rgb(51, 51, 51);
+  border-color: rgb(51, 51, 51);
+}
+
+/* #quantity-button::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  opacity: 0;
+  animation-duration: 500ms;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent;
+  border-image: initial;
+  border-radius: 5px;
+} */
+
+#quantity-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+#quantity {
+  display: block;
+  padding-right: 0px;
+  padding-left: 0px;
+  flex-direction: row;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 90%;
+  flex: 0 0 auto;
+}
+
+#quantity-options {
+  display: none;
+  position: absolute;
+  text-align: center;
+  transform: translate3d(-40px, 40px, 0);
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+#dropdown-arrow {
+  display: flex;
+}
+
+/*////////////////////////
+  Purchase Column Styling
+////////////////////////*/
+
+#purchase-column {
+  padding-left: 16px;
+  padding-right:16px;
+}
+
+.fulfillment-boxes {
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background: rgb(247, 247, 247);
+}
+
+#delivery-box {
+  overflow: hidden;
+}
+
+.dark-green-bold {
+  font-weight: bold;
+  color: rgb(0, 102, 1);
+}
+
+.dark-green-margin {
+  color: rgb(0, 102, 1);
+  margin-bottom: 4px;
+}
+
+.dark-bold {
+  font-weight: bold;
+  color: rgb(51, 51, 51);
+}
+
+.dark-margin {
+  color: rgb(102, 102, 102);
+  padding-top: 4px;
+}
+
+.red-button {
+  vertical-align: middle;
+  text-align: center;
+  text-overflow: ellipsis;
+  height: 32px;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(204, 0, 0);
+  width: 100%;
+  font-size: 15px;
+  border: 1px solid rgb(204, 0, 0);
+  padding: 0px 8px;
+  margin: 0px;
+  border-radius: 4px;
+}
+
+/*////////////////////////
+  Reactive Styling
+////////////////////////*/
+
+@media (min-width: 0px) {
+  #carousel {
+    margin-left: initial;
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  #main-image {
+    margin-left: initial;
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .column-1-4 {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 480px) {
+  #price-column {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 668px) {
+  .column-1-4 {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  #carousel {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  #carousel-wrapper {
+    padding: 0px;
+  }
+
+  #multiple-image-wrapper {
+    max-height: 577px;
+    padding-left: 12px;
+    max-width: 700px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .carousel-items {
+    margin-left: initial;
+
+  }
+  #image-legend {
+    flex-basis: 16.6667%;
+    max-width: 16.6667%;
+  }
+
+  #main-image {
+    flex-basis: 83.3333%;
+    max-width: 83.3333%;
+  }
+
+  .column-1-4 {
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+
+  #price-column {
+    padding-left: 32px;
+    padding-right: 0px;
+  }
+
+  #price-styling {
+    font-size:23px;
+  }
+
+  #purchase-column {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width:1200px) {
+  #price-styling {
+    font-size:29px;
+  }
 }
