@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function PurchaseColumn(props) {
+export default function PurchaseColumn({ handlePurchase }) {
   return (
     <div className="column-1-4" id="purchase-column">
       <div className="fulfillment-boxes">
@@ -14,7 +14,7 @@ export default function PurchaseColumn(props) {
             </div>
           </div>
           <div className="column-1-2 tiny-padding-left">
-            <button className="red-button">Pick it up</button>
+            <button className="red-button" onClick={handlePurchase}>Pick it up</button>
           </div>
           <div className="md-text full-width">{'Ready in 4 hours for pickup inside the store. \n'}</div>
           <div className="sm-text tiny-margin-top">Aisle 1</div>
@@ -31,7 +31,7 @@ export default function PurchaseColumn(props) {
             </div>
           </div>
           <div className="column-1-2 tiny-padding-left">
-            <button className="red-button">Deliver it</button>
+            <button className="red-button" onClick={handlePurchase}>Deliver it</button>
           </div>
           <div className="md-text">
             <span className="dark-green-margin">Get it as soon as 9am tomorrow </span>

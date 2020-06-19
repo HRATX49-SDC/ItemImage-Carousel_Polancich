@@ -13,15 +13,19 @@ class App extends React.Component {
         url: []
       },
       currentImage: 0,
-      likes: [false]
+      likes: [false],
+      cart: [],
+      currentQuantity: 1
     }
 
     this.getCat = this.getCat.bind(this);
     this.changeImage = this.changeImage.bind(this);
+    this.handleQuantityChange = this.handleQuantityChange.bind(this);
+    this.handlePurchase = this.handlePurchase.bind(this);
   }
 
   componentDidMount() {
-    this.getCat('Midnyght');
+    this.getCat('Luna');
   }
 
   getCat(catName) {
@@ -60,11 +64,38 @@ class App extends React.Component {
     });
   }
 
+  handlePurchase() {
+    let cart = this.state.cart.slice();
+    cart.push({
+      quantity: this.state.currentQuantity,
+      name: this.state.cat.catName,
+      pricePerUnit: this.state.cat.price
+    })
+    this.setState({
+      cart
+    })
+  }
+
+  handleQuantityChange(e) {
+    this.setState({
+      currentQuantity: parseInt(e.target.value)
+    })
+  }
+
   render() {
     return(
     <div>
       <Title category={this.state.cat.categoryName} name={this.state.cat.catName}/>
-      <ContentBox cat={this.state.cat} mainImage={this.state.currentImage} changeImage={this.changeImage} likes={this.state.likes} toggleLike={() => {this.toggleLike()}}/>
+      <ContentBox
+      cat={this.state.cat}
+      mainImage={this.state.currentImage}
+      changeImage={this.changeImage}
+      likes={this.state.likes}
+      currentQuantity={this.state.currentQuantity}
+      toggleLike={() => {this.toggleLike()}}
+      handleQuantityChange={this.handleQuantityChange}
+      handlePurchase={this.handlePurchase}
+      />
     </div>
     );
   }
