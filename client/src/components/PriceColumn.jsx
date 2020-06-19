@@ -19,7 +19,7 @@ export default function PriceColumn(props) {
               <option>4</option>
             </select>
           </div>
-          <i className="gg-chevron-down"></i>
+          {/* <i className="gg-chevron-down"></i> */}
         </div>
       </div>
     </div>
