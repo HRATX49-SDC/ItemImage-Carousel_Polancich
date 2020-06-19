@@ -17,7 +17,6 @@ export default function PurchaseColumn(props) {
             <button className="red-button">Pick it up</button>
           </div>
           <div className="md-text full-width">{'Ready in 4 hours for pickup inside the store. \n'}</div>
-          <div> </div>
           <div className="sm-text tiny-margin-top">Aisle 1</div>
         </div>
       </div>
