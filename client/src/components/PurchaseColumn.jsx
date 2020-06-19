@@ -16,7 +16,8 @@ export default function PurchaseColumn(props) {
           <div className="column-1-2 tiny-padding-left">
             <button className="red-button">Pick it up</button>
           </div>
-          <div className="md-text">Ready in 4 hours for pickup inside the store.</div>
+          <div className="md-text full-width">{'Ready in 4 hours for pickup inside the store. \n'}</div>
+          <div> </div>
           <div className="sm-text tiny-margin-top">Aisle 1</div>
         </div>
       </div>
@@ -37,7 +38,7 @@ export default function PurchaseColumn(props) {
             <span className="dark-green-margin">Get it as soon as 9am tomorrow </span>
             <span>with Shipt</span>
             <div className="dark-margin">Delivery windows are in high demand and can change quickly</div>
-            <div>Free with membership or $9.99/order</div>
+            <div className="sm-text">Free with membership or $9.99/order</div>
           </div>
           <div className="sm-text tiny-margin-top mini-link">Learn more</div>
         </div>

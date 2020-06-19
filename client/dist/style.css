@@ -32,6 +32,10 @@ div {
   margin-top: 4px;
 }
 
+.full-width {
+  width: 100%;
+}
+
 .std-padding {
   padding-left: 16px;
   padding-right: 16px;
@@ -327,6 +331,30 @@ img {
   border-color: rgb(136, 136, 136);
   box-shadow: none;
   overflow: visible;
+}
+
+.gg-chevron-down {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,.6));
+  width: 15px;
+  height: 15px;
+  border: 2px solid transparent;
+  border-radius: 100px
+}
+.gg-chevron-down::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  left: 4px;
+  top: 2px
 }
 
 #quantity-button:active {
