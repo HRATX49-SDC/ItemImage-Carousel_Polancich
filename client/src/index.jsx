@@ -53,13 +53,18 @@ class App extends React.Component {
   }
 
   toggleLike() {
+    let newLikes = Object.create(this.state.likes);
+    newLikes[this.state.currentImage] = !newLikes[this.state.currentImage];
+    this.setState({
+      likes: newLikes
+    });
   }
 
   render() {
     return(
     <div>
       <Title category={this.state.cat.categoryName} name={this.state.cat.catName}/>
-      <ContentBox cat={this.state.cat} mainImage={this.state.currentImage} changeImage={this.changeImage} likes={this.state.likes}/>
+      <ContentBox cat={this.state.cat} mainImage={this.state.currentImage} changeImage={this.changeImage} likes={this.state.likes} toggleLike={() => {this.toggleLike()}}/>
     </div>
     );
   }
