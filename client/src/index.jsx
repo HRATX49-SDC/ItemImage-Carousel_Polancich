@@ -30,7 +30,7 @@ class App extends React.Component {
 
   getCat(catName) {
     Axios
-      .get('/purrget', {
+      .get('/main', {
         params: {
           catName
         }
@@ -101,4 +101,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('main'));
