@@ -27,6 +27,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin')
 
+  //Eventually you can set up grunt to watch your files. So a new build folder will be made everytime you change your bundle or css files
+  // Auto deploy to S3
+
   // Default task(s).
   grunt.registerTask('default', ['uglify', 'cssmin']);
 };
