@@ -9,7 +9,9 @@ app.use(express.json());
 app.use(express.urlencoded( { extended: true } ));
 app.use(express.static(path.join(__dirname, 'client', 'dist')));
 
-app.get('/purrget', (req, res) => {
+app.get('/main', (req, res) => {
+  console.log('recieved request from proxy');
+  console.log(req.query.catName)
   db
     .getCat(req.query.catName)
     .then(results => {
