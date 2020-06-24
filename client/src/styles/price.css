@@ -1,0 +1,98 @@
+.priceColumn {
+  padding-top: 12px;
+  margin-left: initial;
+  flex-basis: 25%;
+  max-width: 25%;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.dottedOutline:focus {
+  outline-offset: 2px;
+  outline: rgb(51, 51, 51) dashed 1px;
+}
+
+.priceBox {
+  padding-bottom: 16px;
+}
+
+.priceStyle {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.reviewBox {
+  margin-top: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  align-items: center;
+}
+
+.priceLink {
+  display: flex;
+  margin-right: 4px;
+  vertical-align: baseline;
+  cursor: pointer;
+  color: rgb(102, 102, 102);
+  text-decoration: underline;
+  font-size: 12px;
+}
+
+.priceLink:hover {
+  color: rgb(51, 51, 51);
+  text-decoration: none;
+}
+
+.questionsLink {
+  composes: priceLink;
+  border-left: 1px solid rgb(214, 214, 214);
+  padding-left: 4px;
+}
+
+.quantityBox {
+  padding-bottom: 12px;
+}
+
+.quantitySelect {
+  width: 100px;
+  position: relative;
+}
+
+.quantityTitle {
+  font-weight: bold;
+  transform: translate3d(0px, -12px, 0px);
+  font-size: 16px;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  backface-visibility: hidden;
+  margin-left: 12px;
+  z-index: 1;
+  pointer-events: none;
+  padding: 0px 3px;
+}
+
+.quantityButton {
+  composes: dottedOutline;
+  position: relative;
+  font-weight: normal;
+  text-align: center;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  user-select: none;
+  display: block;
+  flex-basis: 100%;
+  width: 100%;
+  font-size:  16px;
+  line-height: 1.42857;
+  color: rgb(51, 51, 51);
+  background-color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  border-radius: 4px;
+  border-color: rgb(136, 136, 136);
+  box-shadow: none;
+  overflow: visible;
+}
