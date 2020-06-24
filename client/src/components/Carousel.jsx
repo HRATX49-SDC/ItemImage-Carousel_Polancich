@@ -1,17 +1,18 @@
 import React from 'react';
+import styles from '../styles/carousel.css';
 
 export default function Carousel({ images, mainImage, changeImage, likes, toggleLike}) {
   return (
 
-    <div id='carousel'>
-      <div id='carousel-wrapper'>
+    <div className={styles.carousel}>
+      <div className={styles.carouselWrapper}>
         {/* <div id='mutiple-image-wrapper'> */}
-        <div className='carousel-items' id='image-legend'>
-          <div id='legend-grid'>
+        <div className={styles.imageLegend}>
+          <div id={styles.imageGrid}>
             {images.map((image, index) => {
               return (
-                <button key={index} className="image-button" onClick={(e) => changeImage(e)}>
-                  <img src={image} id={index} className='thumbnail' />
+                <button key={index} className={styles.imageButton} onClick={(e) => changeImage(e)}>
+                  <img src={image} id={index} className={styles.thumbnail} />
                 </button>
               );
             })}
