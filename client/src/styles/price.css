@@ -96,3 +96,46 @@
   box-shadow: none;
   overflow: visible;
 }
+
+@media (min-width: 0px) {
+
+  .priceColumn {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 480px) {
+  .priceColumn {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 668px) {
+  .priceColumn {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .priceColumn {
+    flex-basis: 25%;
+    max-width: 25%;
+    padding-left: 32px;
+    padding-right: 0px;
+  }
+
+  .priceStyle {
+    font-size:23px;
+  }
+
+}
+
+@media (min-width:1200px) {
+  .priceStyle {
+    font-size:29px;
+  }
+}
