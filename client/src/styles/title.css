@@ -45,6 +45,7 @@
 .miniLinkSeparator {
   padding-left: 4px;
   padding-right: 4px;
+  font-size: 12px;
 }
 
 .styledHeading {
@@ -67,4 +68,5 @@
 .relatedLink {
   composes: miniLink;
   color: rgb(51, 51, 51);
+  font-size: 16px;
 }
