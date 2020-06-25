@@ -97,6 +97,21 @@
   overflow: visible;
 }
 
+.buttonDiv {
+  display: inline-block;
+  width: 50%;
+}
+
+.buttonQuantity {
+  composes: buttonDiv;
+  text-align: left;
+}
+
+.buttonSVG {
+  composes: buttonDiv;
+  text-align: right;
+}
+
 @media (min-width: 0px) {
 
   .priceColumn {
