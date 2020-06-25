@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Axios from 'axios';
+import $ from 'jquery';
 
 import Title from './components/Title.jsx';
 import ContentBox from './components/ContentBox.jsx';
@@ -26,6 +27,9 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getCat('Luna');
+    $('body').on('click', '.catLink', (e) => {
+      console.log(e.currentTarget);
+    });
   }
 
   getCat(catName) {
