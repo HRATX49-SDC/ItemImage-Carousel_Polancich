@@ -28,7 +28,11 @@ class App extends React.Component {
   componentDidMount() {
     this.getCat('Luna');
     $('body').on('click', '.catLink', (e) => {
-      console.log(e.currentTarget);
+      this.getCat(e.currentTarget.id);
+    });
+    $('body').on('submit', '.form', (e) => {
+      let formatted = e.target[0].rawValue.replace(/(^\w|\s\w)(\S*)/g, (_,m1,m2) => m1.toUpperCase()+m2.toLowerCase());
+      this.getCat(formatted);
     });
   }
 
@@ -46,11 +50,17 @@ class App extends React.Component {
         })
         this.setState({
           cat: results.data,
-          likes: liked
+          likes: liked,
+          currentImage: 0
         });
       })
       .catch(err => {
-        console.log(err);
+        this.setState({
+          cat: {
+            catName: 'No Such Cat Exists',
+            url: ['https://http.cat/204']
+          }
+        })
       })
   }
 
@@ -70,6 +80,9 @@ class App extends React.Component {
 
   handlePurchase() {
     let cart = this.state.cart.slice();
+    if(this.state.cat.catName === 'No Such Cat Exists') {
+      return;
+    }
     cart.push({
       quantity: this.state.currentQuantity,
       name: this.state.cat.catName,
