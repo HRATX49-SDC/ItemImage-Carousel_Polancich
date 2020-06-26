@@ -18,7 +18,9 @@ export default function Carousel({ images, mainImage, changeImage, likes, toggle
           </div>
         </div>
         <div className={styles.mainImage}>
-          <img className={styles.image} src={images[mainImage]} />
+          <div data-role="imagemagnifier" data-magnifier-mode="glass" data-lens-type="circle" data-lens-size="200">
+            <img className={styles.image} src={images[mainImage]} />
+          </div>
           <button className={styles.likeButton} onClick={toggleLike}>
             <i className={styles.ggCircle}></i>
             <i className={`${styles.ggHeart} ${likes[mainImage] ? `${styles.redFill}` : ''}`}></i>

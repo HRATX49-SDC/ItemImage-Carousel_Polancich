@@ -16,13 +16,15 @@ class App extends React.Component {
       currentImage: 0,
       likes: [false],
       cart: [],
-      currentQuantity: 1
+      currentQuantity: 1,
+      displayImprove: false
     }
 
     this.getCat = this.getCat.bind(this);
     this.changeImage = this.changeImage.bind(this);
     this.handleQuantityChange = this.handleQuantityChange.bind(this);
     this.handlePurchase = this.handlePurchase.bind(this);
+    this.toggleImprove = this.toggleImprove.bind(this);
   }
 
   componentDidMount() {
@@ -99,6 +101,13 @@ class App extends React.Component {
     })
   }
 
+  toggleImprove(e) {
+    e.preventDefault();
+    this.setState({
+      displayImprove: !this.state.displayImprove
+    })
+  }
+
   render() {
     return(
     <div>
@@ -112,6 +121,8 @@ class App extends React.Component {
       toggleLike={() => {this.toggleLike()}}
       handleQuantityChange={this.handleQuantityChange}
       handlePurchase={this.handlePurchase}
+      displayImprove={this.state.displayImprove}
+      toggleImprove={this.toggleImprove}
       />
     </div>
     );
