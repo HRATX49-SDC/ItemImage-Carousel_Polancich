@@ -16,7 +16,7 @@ export default function PurchaseColumn({ handlePurchase, displayImprove, toggleI
             </div>
           </div>
           <div className={styles.halfColPaddingLeft}>
-            <button className={styles.redButton} onClick={handlePurchase}>Pick it up</button>
+            <button className={`${styles.redButton} purchaseButton`} onClick={handlePurchase}>Pick it up</button>
           </div>
           <div className={styles.readyIn}>Ready in 4 hours for pickup inside the store.</div>
           <div className={styles.aisle}>Aisle 1</div>
@@ -33,7 +33,7 @@ export default function PurchaseColumn({ handlePurchase, displayImprove, toggleI
             </div>
           </div>
           <div className={styles.halfColPaddingLeft}>
-            <button className={styles.redButton} onClick={handlePurchase}>Deliver it</button>
+            <button className={`${styles.redButton} purchaseButton`} onClick={handlePurchase}>Deliver it</button>
           </div>
           <div className={styles.mediumText}>
             <span className={styles.darkGreenMargin}>Get it as soon as 9am tomorrow </span>

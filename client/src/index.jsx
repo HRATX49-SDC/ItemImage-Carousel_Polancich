@@ -34,7 +34,6 @@ class App extends React.Component {
     });
     $('body').on('submit', '.form', (e) => {
       console.log(e.target[0].value);
-      //test
       let formatted = e.target[0].value.replace(/(^\w|\s\w)(\S*)/g, (_,m1,m2) => m1.toUpperCase()+m2.toLowerCase());
       this.getCat(formatted);
     });
@@ -92,6 +91,9 @@ class App extends React.Component {
       name: this.state.cat.catName,
       pricePerUnit: this.state.cat.price
     })
+
+    window.cart = cart;
+
     this.setState({
       cart
     })
@@ -105,6 +107,11 @@ class App extends React.Component {
 
   toggleImprove(e) {
     e.preventDefault();
+    if(e.type === 'submit') {
+      let children = Array.from(e.target.children)
+      //children.forEach(child => console.log(child));
+      console.log('feedback logged:', children[6].children[1].value)
+    }
     this.setState({
       displayImprove: !this.state.displayImprove
     })

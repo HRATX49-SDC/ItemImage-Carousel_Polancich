@@ -15,7 +15,7 @@ export default function Improve({ displayImprove, toggleImprove }) {
           </div>
           <div className={styles.checkboxRow}>
             <label className={styles.label} htmlFor='buyOnlineAndPickupStore'>
-              <input type="checkbox" id='buyOnlineAndPickupStore' name='buyOnlineAndPickupStore' className={styles.checkbox} />
+              <input type="checkbox" id='buyOnlineAndPickupStore' name='buyOnlineAndPickupStore' className={styles.checkbox} defaultChecked={false}/>
               <div className={styles.checkboxLabel}>buying online & picking up at the store</div>
             </label>
           </div>
