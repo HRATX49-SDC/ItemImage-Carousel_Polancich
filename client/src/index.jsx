@@ -35,7 +35,7 @@ class App extends React.Component {
     $('body').on('submit', '.form', (e) => {
       console.log(e.target[0].value);
       //test
-      let formatted = e.target[0].rawValue.replace(/(^\w|\s\w)(\S*)/g, (_,m1,m2) => m1.toUpperCase()+m2.toLowerCase());
+      let formatted = e.target[0].value.replace(/(^\w|\s\w)(\S*)/g, (_,m1,m2) => m1.toUpperCase()+m2.toLowerCase());
       this.getCat(formatted);
     });
   }
