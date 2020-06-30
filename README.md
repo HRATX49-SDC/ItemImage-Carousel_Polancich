@@ -1,5 +1,6 @@
-# Casper-MainItemDisplayService
-Main Item Display Service
+# Main Item Display Service
+
+This service is part of a larger project that implements a site with similar appearance to Target. The site utilizes service oritented architecture to increase flexibility, scalability, and reliablility. The final project consists of 5 standalone services, which can be easily combined utilizing a reverse Proxy. The five services are Main Item Display, Search/Header/Footer, About This Item, Recommended / Featured Items, and Reviews.
 
 ## Installation & Startup
 
