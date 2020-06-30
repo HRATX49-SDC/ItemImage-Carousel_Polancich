@@ -5,7 +5,8 @@ Main Item Display Service
 
 Use npm to install required packages
 
-```npm install
+```zsh
+npm install
 ```
 
 This service is configured to run locally on port 5000 or at its deployed location on AWS Elastic Beanstalk
@@ -13,7 +14,8 @@ URL: http://purrgetmainitemdisplay-env.eba-upicdvwk.us-east-2.elasticbeanstalk.c
 
 If running locally, use npm start to run start running the server
 
-```npm start
+```zsh
+npm start
 ```
 
 ## Service Overview
