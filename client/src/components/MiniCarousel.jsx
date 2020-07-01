@@ -4,7 +4,7 @@ import Carousel, { Dots } from '@brainhubeu/react-carousel';
 import styles from '../styles/carousel.css';
 
 export default function MiniCarousel({ images, mainImage, changeImage, likes, toggleLike}) {
-
+  let isSolo = document.getElementById('search') === null;
   return (
     <div className={styles.miniCarouselWrapper}>
       <Carousel
@@ -18,7 +18,7 @@ export default function MiniCarousel({ images, mainImage, changeImage, likes, to
           return <img className={styles.miniCarouselImages} index={index} key={index} src={image} />
         })}
       </Carousel>
-      <button className={styles.miniCarouselLike} onClick={toggleLike}>
+      <button className={isSolo ? styles.miniCarouselLikeSolo : styles.miniCarouselLike} onClick={toggleLike}>
             <i className={styles.ggCircle}></i>
             <i className={`${styles.ggHeart} ${likes[mainImage] ? `${styles.redFill}` : ''}`}></i>
       </button>

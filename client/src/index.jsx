@@ -31,14 +31,17 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getCat('Luna');
-    $('body').on('click', '.catLink', (e) => {
-      this.getCat(e.currentTarget.id);
-    });
     $('body').on('submit', '.form', (e) => {
       console.log(e.target[0].value);
       let formatted = e.target[0].value.replace(/(^\w|\s\w)(\S*)/g, (_,m1,m2) => m1.toUpperCase()+m2.toLowerCase());
       this.getCat(formatted);
     });
+    $('body').on('click', '.catLink', (e) => {
+      this.getCat(e.currentTarget.id);
+    });
+    $('body').on('click', '.catRows', (e) => {
+      this.getCat(e.currentTarget.value);
+    })
     $('body').on('click', '.BrainhubCarousel__dot', (e) => {
       this.setState({
         currentImage: parseInt(e.target.innerText) - 1

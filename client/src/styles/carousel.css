@@ -194,6 +194,12 @@
   right: 50px;
 }
 
+.miniCarouselLikeSolo {
+  composes: likeButton;
+  bottom:300px;
+  right: 50px;
+}
+
 
 /* Media Queries */
 .imageLegend {
