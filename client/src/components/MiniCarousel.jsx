@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel, { Dots } from '@brainhubeu/react-carousel';
-// import '@brainhubeu/react-carousel/lib/style.css';
+// import carouselStyles from '@brainhubeu/react-carousel/lib/style.css';
 import styles from '../styles/carousel.css';
 
 export default function MiniCarousel({ images, mainImage, changeImage, likes, toggleLike}) {

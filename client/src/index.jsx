@@ -18,7 +18,8 @@ class App extends React.Component {
       cart: [],
       currentQuantity: 1,
       displayImprove: false,
-      renderCarousel: window.innerWidth < 992
+      renderCarousel: window.innerWidth < 992,
+      questionCount: 0
     }
 
     this.getCat = this.getCat.bind(this);
@@ -71,14 +72,17 @@ class App extends React.Component {
         this.setState({
           cat: results.data,
           likes: liked,
-          currentImage: 0
+          currentImage: 0,
+          questionCount: window.quantity
         });
       })
       .catch(err => {
         this.setState({
           cat: {
             catName: 'No Such Cat Exists',
-            url: ['https://http.cat/204']
+            url: ['https://http.cat/204'],
+            currentImage: 0,
+            questionCount: 0
           }
         })
       })
@@ -150,6 +154,7 @@ class App extends React.Component {
       displayImprove={this.state.displayImprove}
       toggleImprove={this.toggleImprove}
       renderCarousel={this.state.renderCarousel}
+      questionCount={this.state.questionCount}
       />
     </div>
     );

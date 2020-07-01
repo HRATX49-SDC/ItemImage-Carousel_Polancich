@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from '../styles/price.css'
 
-export default function PriceColumn({ price, currentQuantity, handleQuantityChange }) {
+export default function PriceColumn({ price, currentQuantity, handleQuantityChange, questionCount }) {
   return (
     <div className={styles.priceColumn}>
       <div className={styles.priceBox}>
         <div className={styles.priceStyle}>{`$${Number.parseFloat(price).toFixed(2)}`}</div>
         <div className={styles.reviewBox}>
-          <a href="#" className={styles.priceLink}>12 reveiws</a>
-          <a href="#" className={styles.questionsLink}>2 questions</a>
+          <a href="#reviews" className={styles.priceLink}>12 reveiws</a>
+          <a href="#about" className={styles.questionsLink}>{questionCount ?? 2} questions</a>
         </div>
         <div className={styles.quantityBox}>
           <div className={styles.quantitySelect}>
