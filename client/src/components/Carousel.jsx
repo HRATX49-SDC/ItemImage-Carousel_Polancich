@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../styles/carousel.css';
 
 export default function Carousel({ images, mainImage, changeImage, likes, toggleLike}) {
+
   return (
 
     <div className={styles.carousel}>

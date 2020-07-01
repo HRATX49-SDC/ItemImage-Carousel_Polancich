@@ -17,7 +17,8 @@ class App extends React.Component {
       likes: [false],
       cart: [],
       currentQuantity: 1,
-      displayImprove: false
+      displayImprove: false,
+      renderCarousel: window.innerWidth < 992
     }
 
     this.getCat = this.getCat.bind(this);
@@ -25,6 +26,7 @@ class App extends React.Component {
     this.handleQuantityChange = this.handleQuantityChange.bind(this);
     this.handlePurchase = this.handlePurchase.bind(this);
     this.toggleImprove = this.toggleImprove.bind(this);
+    this.onWindowResize = this.onWindowResize.bind(this);
   }
 
   componentDidMount() {
@@ -36,6 +38,18 @@ class App extends React.Component {
       console.log(e.target[0].value);
       let formatted = e.target[0].value.replace(/(^\w|\s\w)(\S*)/g, (_,m1,m2) => m1.toUpperCase()+m2.toLowerCase());
       this.getCat(formatted);
+    });
+    $('body').on('click', '.BrainhubCarousel__dot', (e) => {
+      this.setState({
+        currentImage: parseInt(e.target.innerText) - 1
+      })
+    })
+    window.addEventListener('resize', this.onWindowResize);
+  }
+
+  onWindowResize() {
+    this.setState({
+      renderCarousel: window.innerWidth < 992
     });
   }
 
@@ -132,6 +146,7 @@ class App extends React.Component {
       handlePurchase={this.handlePurchase}
       displayImprove={this.state.displayImprove}
       toggleImprove={this.toggleImprove}
+      renderCarousel={this.state.renderCarousel}
       />
     </div>
     );
