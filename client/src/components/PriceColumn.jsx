@@ -8,7 +8,7 @@ export default function PriceColumn({ price, currentQuantity, handleQuantityChan
         <div className={styles.priceStyle}>{`$${Number.parseFloat(price).toFixed(2)}`}</div>
         <div className={styles.reviewBox}>
           <a href="#reviews" className={styles.priceLink}>12 reveiws</a>
-          <a href="#about" className={styles.questionsLink}>{questionCount ?? 2} questions</a>
+          <a href="#about" className={styles.questionsLink}>{questionCount === undefined ? 0 : window.questions} questions</a>
         </div>
         <div className={styles.quantityBox}>
           <div className={styles.quantitySelect}>

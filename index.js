@@ -1,17 +1,20 @@
 const express = require('express');
 const path = require('path');
 const db = require('./db/querys.js');
-const PORT = process.env.PORT || 5000;
 
+//Adds server / port setup
+const PORT = process.env.PORT || 5000;
 const app = express();
 
+//adds middleware for all requests
 app.use(express.json());
 app.use(express.urlencoded( { extended: true } ));
 app.use(express.static(path.join(__dirname, 'client', 'dist')));
 
+
+//request routing
 app.get('/main', (req, res) => {
-  console.log('recieved request from proxy');
-  console.log(req.query.catName)
+  //use db functions to retrieve a cat
   db
     .getCat(req.query.catName)
     .then(results => {
@@ -25,6 +28,7 @@ app.get('/main', (req, res) => {
       res.status(200).send(cat);
     })
     .catch(err => {
+      //if there is an error, log it for debugging and send the error code
       console.log(err);
       res.sendStatus(404);
     })
