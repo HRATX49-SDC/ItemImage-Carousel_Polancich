@@ -4,12 +4,15 @@ var express = require('express');
 
 var path = require('path');
 
+var compression = require('compression');
+
 var db = require('./db/querys.js'); //Adds server / port setup
 
 
 var PORT = process.env.PORT || 5000;
 var app = express(); //adds middleware for all requests
 
+app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
