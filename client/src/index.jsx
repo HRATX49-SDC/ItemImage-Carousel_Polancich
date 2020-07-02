@@ -28,9 +28,9 @@ class App extends React.Component {
       //renderCarousel tracks the window inner width. A carousel is only rendered when innerWidth is below 992px
       renderCarousel: window.innerWidth < 992,
       //tracks the number of questions in the About component
-      questionCount: 0,
+      questionCount: window.question ?? 0,
       //tracks the numner of reviews from the Reviews component
-      reviewCount: 0
+      reviewCount: window.totalReviews ?? 0
     }
 
     //functon binding for prop functions
@@ -81,9 +81,9 @@ class App extends React.Component {
     })
 
     //listens to the Reviews Header from reveiw service to pull # of questions.
-    $('body').on('DOMSubtreeModified', '.matching-reveiws', (e) => {
+    $('body').on('DOMSubtreeModified', '#reviews', (e) => {
       this.setState({
-        reviewCount: winodw.totalReviews
+        reviewCount: window.totalReviews
       });
     })
   }
@@ -212,7 +212,7 @@ class App extends React.Component {
       toggleImprove={this.toggleImprove}
       renderCarousel={this.state.renderCarousel}
       questionCount={this.state.questionCount}
-      reviewCount={this.state.reveiwCount}
+      reviewCount={this.state.reviewCount}
       />
     </div>
     );
