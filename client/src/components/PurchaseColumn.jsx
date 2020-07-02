@@ -5,6 +5,7 @@ import Improve from './Improve.jsx';
 export default function PurchaseColumn({ handlePurchase, displayImprove, toggleImprove }) {
   return (
     <div className={styles.purchaseColumn}>
+      {/* Start of Pick Up today Box */}
       <div className={styles.fulfillmentBoxes}>
         <div className={styles.flexRow}>
           <div className={styles.halfColPaddingRight}>
@@ -16,12 +17,19 @@ export default function PurchaseColumn({ handlePurchase, displayImprove, toggleI
             </div>
           </div>
           <div className={styles.halfColPaddingLeft}>
-            <button className={`${styles.redButton} purchaseButton`} onClick={handlePurchase}>Pick it up</button>
+            <button
+            className={`${styles.redButton} purchaseButton`}
+            id='pickup'
+            onClick={handlePurchase}>
+              Pick it up
+            </button>
           </div>
           <div className={styles.readyIn}>Ready in 4 hours for pickup inside the store.</div>
           <div className={styles.aisle}>Aisle 1</div>
         </div>
       </div>
+      {/* End of Pick Up today Box */}
+      {/* Start of Delivery today Box */}
       <div className={styles.deliveryBox}>
         <div className={styles.flexRow}>
           <div className={styles.halfColPaddingRight}>
@@ -33,17 +41,26 @@ export default function PurchaseColumn({ handlePurchase, displayImprove, toggleI
             </div>
           </div>
           <div className={styles.halfColPaddingLeft}>
-            <button className={`${styles.redButton} purchaseButton`} onClick={handlePurchase}>Deliver it</button>
+            <button
+            className={`${styles.redButton} purchaseButton`}
+            id='delivery'
+            onClick={handlePurchase}>
+              Deliver it
+            </button>
           </div>
           <div className={styles.mediumText}>
             <span className={styles.darkGreenMargin}>Get it as soon as 9am tomorrow </span>
             <span>with Shipt</span>
-            <div className={styles.darkMargin}>Delivery windows are in high demand and can change quickly</div>
+            <div className={styles.darkMargin}>
+              Delivery windows are in high demand and can change quickly
+            </div>
             <div className={styles.smallText}>Free with membership or $9.99/order</div>
           </div>
           <div className={styles.learn}>Learn more</div>
         </div>
       </div>
+      {/* End of Delivery today Box */}
+      {/* Start of Curbside Pickup Box */}
       <div className={styles.curbsideBox}>
         <div className={styles.curbsideContent}>
           <div className={styles.curbside}>
@@ -55,11 +72,17 @@ export default function PurchaseColumn({ handlePurchase, displayImprove, toggleI
             <h2 className={styles.curbHeader}>Looking for curbside pickup?</h2>
           </div>
           <div>
-            <a className={styles.curbLink} href="#">Try our free Drive Up service</a>
+            <a
+            className={styles.curbLink}
+            href="#">
+              Try our free Drive Up service
+            </a>
             <span>, available only in the Target App.</span>
           </div>
         </div>
       </div>
+      {/* End of Curbside Pickup Box */}
+      {/* Start of Registry Box */}
       <div className={styles.flexRow}>
         <div className={styles.registryContainer}>
           <button className={styles.registryButton}>
@@ -72,6 +95,7 @@ export default function PurchaseColumn({ handlePurchase, displayImprove, toggleI
           </button>
         </div>
       </div>
+      {/* End of Registry Box */}
       <Improve displayImprove={displayImprove} toggleImprove={toggleImprove}/>
     </div>
   )

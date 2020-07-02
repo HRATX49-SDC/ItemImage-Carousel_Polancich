@@ -34,6 +34,7 @@ app.get('/main', (req, res) => {
     })
 })
 
+//start server on specified PORT
 app.listen(PORT, () => {
   console.log(`Express is listening on port ${PORT}.`)
 })

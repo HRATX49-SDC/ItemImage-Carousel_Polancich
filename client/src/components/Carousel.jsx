@@ -4,9 +4,9 @@ import styles from '../styles/carousel.css';
 export default function Carousel({ images, mainImage, changeImage, likes, toggleLike}) {
 
   return (
-
     <div className={styles.carousel}>
       <div className={styles.carouselWrapper}>
+        {/* Start of Image Legend / Thumbnail Display */}
         <div className={styles.imageLegend}>
           <div id={styles.imageGrid}>
             {images.map((image, index) => {
@@ -18,8 +18,10 @@ export default function Carousel({ images, mainImage, changeImage, likes, toggle
             })}
           </div>
         </div>
+        {/* End of Image Legend / Thumbnail Display */}
+        {/* Start of Main Image Display */}
         <div className={styles.mainImage}>
-          <div data-role="imagemagnifier" data-magnifier-mode="glass" data-lens-type="circle" data-lens-size="200">
+          <div>
             <img className={styles.image} src={images[mainImage]} />
           </div>
           <button className={styles.likeButton} onClick={toggleLike}>
@@ -27,6 +29,7 @@ export default function Carousel({ images, mainImage, changeImage, likes, toggle
             <i className={`${styles.ggHeart} ${likes[mainImage] ? `${styles.redFill}` : ''}`}></i>
           </button>
         </div>
+        {/* End of Main Image Display */}
       </div>
     </div>
   );
