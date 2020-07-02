@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const compression = require('compression')
 const db = require('./db/querys.js');
 
 //Adds server / port setup
@@ -7,6 +8,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 //adds middleware for all requests
+app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded( { extended: true } ));
 app.use(express.static(path.join(__dirname, 'client', 'dist')));
