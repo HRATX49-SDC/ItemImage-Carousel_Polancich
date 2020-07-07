@@ -74,10 +74,12 @@ class App extends React.Component {
     window.addEventListener('resize', this.onWindowResize);
 
     //listens to the Q&A header from about service to pull # of questions.
-    $('body').on('DOMSubtreeModified', '.tabHeader', (e) => {
-      this.setState({
-        questionCount: window.questions
-      });
+    $('body').on('DOMSubtreeModified', '#about', (e) => {
+      setTimeout(() => {
+        this.setState({
+          questionCount: window.questions
+        });
+      }, 500);
     })
 
     //listens to the Reviews Header from reveiw service to pull # of questions.
