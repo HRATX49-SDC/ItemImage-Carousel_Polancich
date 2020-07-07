@@ -48,6 +48,10 @@
   margin-bottom: 12px;
 }
 
+.stdMarginLeft {
+  margin-left: 12px;
+}
+
 .mediumText {
   font-size: 14px;
 }
@@ -140,10 +144,291 @@
   margin-top: 4px;
 }
 
+.curbsideBox {
+  padding-bottom: 12px;
+}
+
+.curbsideContent {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+}
+
+.curbside {
+  display: flex;
+  text-align: center;
+}
+
+.carIcon {
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  fill: rgb(0, 0, 0);
+  width: 32px;
+  height: 32px;
+  font-family: "Helvetica for Target", HelveticaForTarget, Targetica, "HelveticaNeue for Target", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.4285;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0px;
+  text-indent: 0px;
+  text-shadow: none;
+  text-transform: none;
+  vertical-align: baseline;
+  white-space: normal;
+}
+
+.full {
+  composes: carIcon;
+  height: 100%;
+  width:100%;
+}
+
+.curbHeader {
+  font-size: 16px;
+  margin-left: 12px;
+  margin-top: 4px;
+}
+
+.curbLink {
+  position: relative;
+  color: rgb(51, 51, 51);
+  text-decoration: underline;
+}
+
+.curbLink:hover {
+  text-decoration: none;
+}
+
+.curbLink:focus {
+  outline-offset: 2px;
+  outline: rgb(51, 51, 51) dashed 1px;
+}
+
+.registryContainer {
+  box-sizing: border-box;
+  padding-right: 0px;
+  padding-left: 0px;
+  border-right-color: inherit;
+  flex-direction: row;
+  flex: 0 0 auto;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.registryButton {
+  position: relative;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  user-select: none;
+  flex-basis: 100%;
+  width: 100%;
+  font-size: 12px;
+  line-height: 1.42857;
+  color: rgb(51, 51, 51);
+  background-color: rgb(255, 255, 255);
+  height: 34px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-width: 1px;
+  border-style: solid;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border-color: rgb(136, 136, 136);
+}
+
+.registrySVGBox {
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  fill: rgb(0, 0, 0);
+  width: 24px;
+  height: 24px;
+  letter-spacing: 0px;
+  text-indent: 0px;
+  text-shadow: none;
+  text-transform: none;
+  vertical-align: baseline;
+  white-space: normal;
+}
+
+.improve {
+  margin-left: 4px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.improveLink {
+  position: relative;
+  color: rgb(51, 51, 51);
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.improveLink:hover {
+  text-decoration: none;
+}
+
+.improveLink:focus {
+  outline: 1px dashed rgb(51, 51, 51);
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
+.improveForm {
+  margin: 16px;
+}
+
+.impHeader {
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.checkboxRow {
+  composes: flexRow;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.label {
+  display: block;
+  position: relative;
+}
+
+.label:checked {
+  background-color: rgb(204, 0, 0);
+  border-color: rgb(204, 0, 0);
+}
+
+.checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.checkbox:checked {
+  background-color: rgb(204, 0, 0);
+  border-color: rgb(204, 0, 0);
+}
+
+.checkboxLabel {
+  position: relative;
+  vertical-align: top;
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 6px;
+}
+
+.inputWrapper {
+  position: relative;
+  z-index: 0;
+  padding-top: 5px;
+  margin-bottom: 16px;
+}
+
+.inputLabel {
+  display: inline-block;
+  position: absolute;
+  font-size: 12px;
+  color: rgb(102, 102, 102);
+  transform: translate3d(0px, -8px, 0px);
+  background-color: rgb(255, 255, 255);
+  backface-visibility: hidden;
+  margin-left: 12px;
+  z-index: 1;
+  left: 0px;
+  padding-left: 3px;
+  padding-right: 3px;
+  pointer-events: none;
+  transition: all 200ms ease-out 0s;
+}
+
+.feedbackDetails {
+  position: relative;
+  font-size: 16px;
+  line-height: 1.4285;
+  resize: none;
+  -webkit-appearance: none;
+  width: 100%;
+  box-shadow: none;
+  background: rgb(255, 255, 255);
+  outline: none;
+  padding: 9px 12px;
+  margin: 0px;
+  border-radius: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(136, 136, 136);
+  border-image: initial;
+}
+
+.feedbackCaption {
+  composes: flexRow;
+  margin-bottom: 16px;
+  color: rgb(102, 102, 102);
+  font-size: 12px;
+}
+
+.inputButtonWrapper {
+  text-align: right;
+}
+
+.inputButton {
+  position: relative;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  user-select: none;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.42857;
+  color: rgb(255, 255, 255);
+  background-color: rgb(204, 0, 0);
+  border-width: 1px;
+  border-style: solid;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border-color: rgb(204, 0, 0);
+}
+
+.inputButton:disabled {
+  pointer-events: none;
+  font-size: 12px;
+  line-height: 1.42857;
+  color: rgb(102, 102, 102);
+  background-color: rgb(247, 247, 247);
+  border-width: 1px;
+  border-style: solid;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border-color: rgb(214, 214, 214);
+}
+
 @media (min-width: 0px) {
   .purchaseColumn {
     flex-basis: 100%;
     max-width: 100%;
+  }
+
+  .registryContainer {
+    margin-left: initial;
+    flex-basis: 50%;
+    max-width: 50%;
   }
 }
 
@@ -161,6 +446,12 @@
     max-width: 25%;
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .registryContainer {
+    margin-left: initial;
+    flex-basis: 100%;
+    max-width: 100%;
   }
 
 }

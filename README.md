@@ -1,16 +1,26 @@
-# Casper-MainItemDisplayService
-Main Item Display Service
+# Main Item Display Service
 
-This Service is in charge of rendering the Main Item Display to the screen. The Service includes the Title Header (which inlcludes the category), The Image Carousel, the Purchase Price/Quantity Selector, and the Purchase Options.
+This service is part of a larger project that implements a site with similar appearance to Target. The site utilizes service oritented architecture to increase flexibility, scalability, and reliablility. The final project consists of 5 standalone services, which can be easily combined utilizing a reverse Proxy. The five services are Main Item Display, Search/Header/Footer, About This Item, Recommended / Featured Items, and Reviews.
+
+## Installation & Startup
+
+Use npm to install required packages
+
+```zsh
+npm install
+```
+
+This service is configured to run locally on port 5000 or at its deployed location on AWS Elastic Beanstalk
+URL: http://purrgetmainitemdisplay-env.eba-upicdvwk.us-east-2.elasticbeanstalk.com/
+
+If running locally, use npm start to run start running the server
+
+```zsh
+npm start
+```
+
+## Service Overview
+
+This Service is in charge of rendering the Main Item Display to the screen. The Service includes the Title Header (which inlcludes the product category), The Image Carousel, the Purchase Price/Quantity Selector, and the Purchase Options.
 
 The Tech Stack consists of React for the client side, Node/Express for the server, and MySQL for the database.
-
-Client Summary:
-
-Server Summary: The server is written using Express.
-- When a get request is made with a given cat name, the server will get the cooresponding data from the server, refactor the data into a user friendly client object, and send the data back to the client.
-
-Database Summary: The Database consists of three tables: cats, categories, and images.
-- The cats table holds data regarding the individual product. Each cat has a unique name, a price, a rating, and a category reference (Foreign Key to categories table).
-- The categories table holds the different categories of cats (one to many relationship to cats). It holds an id and a unique category name.
-- The images table holds urls to images hosted on amazons S3 cloud storage platform. In addition to this, the table holds a cat_id as a reference (foregin key) to whichever cat the image belongs to.

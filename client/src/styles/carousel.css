@@ -179,7 +179,26 @@
     top: 3px
 }
 
+.miniCarouselWrapper {
+  max-height: 575px;
+  overflow: hidden;
+}
 
+.miniCarouselImages {
+  max-height: 550px;
+}
+
+.miniCarouselLike {
+  composes: likeButton;
+  bottom: 210px;
+  right: 50px;
+}
+
+.miniCarouselLikeSolo {
+  composes: likeButton;
+  bottom:300px;
+  right: 50px;
+}
 
 
 /* Media Queries */

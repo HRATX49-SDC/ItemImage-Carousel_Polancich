@@ -4,18 +4,23 @@ var express = require('express');
 
 var path = require('path');
 
-var db = require('./db/querys.js');
+var compression = require('compression');
+
+var db = require('./db/querys.js'); //Adds server / port setup
+
 
 var PORT = process.env.PORT || 5000;
-var app = express();
+var app = express(); //adds middleware for all requests
+
+app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
-app.use(express["static"](path.join(__dirname, 'client', 'dist')));
+app.use(express["static"](path.join(__dirname, 'client', 'dist'))); //request routing
+
 app.get('/main', function (req, res) {
-  console.log('recieved request from proxy');
-  console.log(req.query.catName);
+  //use db functions to retrieve a cat
   db.getCat(req.query.catName).then(function (results) {
     //restructure the results to send back to the client
     var cat = results[0];
@@ -28,10 +33,12 @@ app.get('/main', function (req, res) {
 
     res.status(200).send(cat);
   })["catch"](function (err) {
+    //if there is an error, log it for debugging and send the error code
     console.log(err);
     res.sendStatus(404);
   });
-});
+}); //start server on specified PORT
+
 app.listen(PORT, function () {
   console.log("Express is listening on port ".concat(PORT, "."));
 });
