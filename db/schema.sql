@@ -4,11 +4,6 @@ create database purrget;
 
 use purrget;
 
-create table categories (
-  id int not null auto_increment primary key,
-  categoryName varChar(255) not null unique key
-);
-
 create table cats (
   id int not null auto_increment primary key,
   catName varChar(255) not null,
@@ -17,11 +12,15 @@ create table cats (
   category_id int not null,
   INDEX categ_ind (category_id),
     FOREIGN KEY (category_id)
-      REFERENCES categories(id)
+      REFERENCES catType(id)
       ON DELETE CASCADE,
   unique key (catName)
 );
 
+create table catType (
+  id int not null auto_increment primary key,
+  categoryName varChar(255) not null unique key
+);
 
 create table images (
   id int not null auto_increment primary key,
@@ -34,10 +33,14 @@ create table images (
 );
 
 -- categories
-INSERT INTO categories (categoryName) VALUES ('Floof');
-INSERT INTO categories (categoryName) VALUES ('Hairless');
-INSERT INTO categories (categoryName) VALUES ('Chonk');
-INSERT INTO categories (categoryName) VALUES ('Adorable');
+-- 1
+INSERT INTO catType (categoryName) VALUES ('Floof'); 
+-- 2
+INSERT INTO catType (categoryName) VALUES ('Hairless');
+-- 3
+INSERT INTO catType (categoryName) VALUES ('Chonk');
+-- 4
+INSERT INTO catType (categoryName) VALUES ('Adorable');
 
 -- cats
 -- actual data

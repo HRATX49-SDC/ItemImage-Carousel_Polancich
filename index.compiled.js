@@ -6,7 +6,10 @@ var path = require('path');
 
 var compression = require('compression');
 
-var db = require('./db/querys.js'); //Adds server / port setup
+var db = require('./db/querys.js');
+
+var _require = require('./db/dataGenerator'),
+    dataGen = _require.dataGen; //Adds server / port setup
 
 
 var PORT = process.env.PORT || 5000;
@@ -17,7 +20,8 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
-app.use(express["static"](path.join(__dirname, 'client', 'dist'))); //request routing
+app.use(express["static"](path.join(__dirname, 'client', 'dist'))); //read
+//request routing
 
 app.get('/main', function (req, res) {
   //use db functions to retrieve a cat
@@ -36,6 +40,33 @@ app.get('/main', function (req, res) {
     //if there is an error, log it for debugging and send the error code
     console.log(err);
     res.sendStatus(404);
+  });
+}); //create
+
+app.post('/main', function (req, res) {
+  db.createCat(req.query.catName, req.query.price, req.query.rating, req.query.category).then(function (results) {
+    res.status(200).send('New Cat Created', results);
+  })["catch"](function (err) {
+    console.log(err);
+    res.status(400).send(err);
+  });
+}); //update
+
+app.put('/main', function (req, res) {
+  db.updateCat(req.query.catName, req.query.price, req.query.rating, req.query.category).then(function (results) {
+    res.status(200).send('Cat Updated ', results);
+  })["catch"](function (err) {
+    console.log(err);
+    res.status(400).send(err);
+  });
+}); //delete
+
+app["delete"]('/main', function (req, res) {
+  db.deleteCat(req.query.catName).then(function (results) {
+    res.status(200).send('Cat Deleted ', results);
+  })["catch"](function (err) {
+    console.log(err);
+    res.status(400).send(err);
   });
 }); //start server on specified PORT
 
