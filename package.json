@@ -4,7 +4,7 @@
   "description": "Main Item Display service for front end capstone project",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "test.js",
     "dev-server": "nodemon index.js",
     "dev-compile": "webpack -d -w",
     "build": "grunt",
@@ -34,6 +34,7 @@
     "jquery": "^3.5.1",
     "mysql": "^2.18.1",
     "newrelic": "^6.11.0",
+    "papaparse": "^5.2.0",
     "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

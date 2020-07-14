@@ -1,10 +1,10 @@
+require("newrelic");
 const express = require("express");
 const path = require("path");
 const compression = require("compression");
 const db = require("./db/querys.js");
 const { dataGen } = require("./db/dataGenerator");
 const { response } = require("express");
-require('newrelic');
 
 //Adds server / port setup
 const PORT = process.env.PORT || 5000;
@@ -26,26 +26,15 @@ app.get("/main", async (req, res) => {
   });
 });
 
-
-app.get("/catName", async (req,res)=>{
-   await db.getCat(req.query.catName, (err,response)=>{
-     if (err){
+app.get("/catName", async (req, res) => {
+  await db.getCat(req.query.catName, (err, response) => {
+    if (err) {
       res.status(400).send(err);
-     } else {
-       res.status(200).send(response);
-     }
-   })
-})
-
-
-
-
-
-
-
-
-
-
+    } else {
+      res.status(200).send(response);
+    }
+  });
+});
 
 //Broken - returns 5 random cats
 // app.get("/fiveCats", async (req,res)=>{
@@ -57,9 +46,6 @@ app.get("/catName", async (req,res)=>{
 //     }
 //   })
 // })
-
-
-
 
 /*
 //read
