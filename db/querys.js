@@ -45,7 +45,6 @@ client.getId = (id, cb) => {
 };
 
 client.getCat = (catName, cb) => {
-  console.log("Getting Cat ", catName);
   let params = [catName];
   client
     .execute(query.individualCatByCatName, params, { prepare: true })
