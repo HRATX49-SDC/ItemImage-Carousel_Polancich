@@ -6,14 +6,14 @@ const { connect } = require("http2");
 // Cassandra BEGIN
 //===============================
 const client = new cassandra.Client({
-  contactPoints: ['127.0.0.1:9042'],
-  localDataCenter: 'datacenter1',
-  keyspace: 'hratxtar',
+  contactPoints: ["127.0.0.1:9042"],
+  localDataCenter: "datacenter1",
+  keyspace: "hratxtar",
 });
 
 client.connect((err) => {
   if (err) {
-    console.log("Error connecting to Cassandra:",err);
+    console.log("Error connecting to Cassandra:", err);
   } else {
     console.log("Cassandra is Connected!");
   }
@@ -27,14 +27,23 @@ client.connect((err) => {
 
 let query = {
   individualCatByCatName: "SELECT * from catsbyname where name=?",
-  byID: "SELECT * from cats where id=?",
+  byIDUnderFiveMil: "SELECT * from catsunderfivemil where id=?",
+  byIDOverFiveMil: "SELECT * from catsoverfivemil where id=?",
   getFiveCats: "Select * FROM cats where id>=? LIMT 5 ALLOW FILTERING",
 };
 
+//query for IDs
 client.getId = (id, cb) => {
   let params = [id];
+  if (id > 5000000) {
+    //If Id is over 5mil
+    var run = query.byIDOverFiveMil;
+  } else {
+    //If Id is under 5 mil
+    var run = query.byIDUnderFiveMil;
+  }
   client
-    .execute(query.byID, params, { prepare: true })
+    .execute(run, params, { prepare: true })
     .then((result) => {
       let response = result.rows[0];
       cb(null, response);
